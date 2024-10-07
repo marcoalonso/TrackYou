@@ -6,14 +6,78 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6C890AED2CB3A6AB003DD357 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C890AEC2CB3A6AB003DD357 /* WidgetKit.framework */; };
+		6C890AEF2CB3A6AB003DD357 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C890AEE2CB3A6AB003DD357 /* SwiftUI.framework */; };
+		6C890AFC2CB3A6AE003DD357 /* GeofenceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6C890B032CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */; };
+		6C890B042CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C890AFA2CB3A6AE003DD357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C890ACD2CB3A665003DD357 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C890AE92CB3A6AB003DD357;
+			remoteInfo = GeofenceWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6C890B012CB3A6AE003DD357 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6C890AFC2CB3A6AE003DD357 /* GeofenceWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6C890AD52CB3A665003DD357 /* TrackYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GeofenceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C890AEC2CB3A6AB003DD357 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6C890AEE2CB3A6AB003DD357 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceActivityAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6C890AFD2CB3A6AE003DD357 /* Exceptions for "GeofenceWidget" folder in "GeofenceWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6C890AE92CB3A6AB003DD357 /* GeofenceWidgetExtension */;
+		};
+		6C890B062CB3A8FB003DD357 /* Exceptions for "TrackYou" folder in "TrackYou" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6C890AD42CB3A665003DD357 /* TrackYou */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6C890AD72CB3A665003DD357 /* TrackYou */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C890B062CB3A8FB003DD357 /* Exceptions for "TrackYou" folder in "TrackYou" target */,
+			);
 			path = TrackYou;
+			sourceTree = "<group>";
+		};
+		6C890AF02CB3A6AB003DD357 /* GeofenceWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C890AFD2CB3A6AE003DD357 /* Exceptions for "GeofenceWidget" folder in "GeofenceWidgetExtension" target */,
+			);
+			path = GeofenceWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +90,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6C890AE72CB3A6AB003DD357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C890AEF2CB3A6AB003DD357 /* SwiftUI.framework in Frameworks */,
+				6C890AED2CB3A6AB003DD357 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6C890ACC2CB3A665003DD357 = {
 			isa = PBXGroup;
 			children = (
+				6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */,
 				6C890AD72CB3A665003DD357 /* TrackYou */,
+				6C890AF02CB3A6AB003DD357 /* GeofenceWidget */,
+				6C890AEB2CB3A6AB003DD357 /* Frameworks */,
 				6C890AD62CB3A665003DD357 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +117,18 @@
 			isa = PBXGroup;
 			children = (
 				6C890AD52CB3A665003DD357 /* TrackYou.app */,
+				6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6C890AEB2CB3A6AB003DD357 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C890AEC2CB3A6AB003DD357 /* WidgetKit.framework */,
+				6C890AEE2CB3A6AB003DD357 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +141,12 @@
 				6C890AD12CB3A665003DD357 /* Sources */,
 				6C890AD22CB3A665003DD357 /* Frameworks */,
 				6C890AD32CB3A665003DD357 /* Resources */,
+				6C890B012CB3A6AE003DD357 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C890AFB2CB3A6AE003DD357 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				6C890AD72CB3A665003DD357 /* TrackYou */,
@@ -69,6 +157,28 @@
 			productName = TrackYou;
 			productReference = 6C890AD52CB3A665003DD357 /* TrackYou.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6C890AE92CB3A6AB003DD357 /* GeofenceWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C890AFE2CB3A6AE003DD357 /* Build configuration list for PBXNativeTarget "GeofenceWidgetExtension" */;
+			buildPhases = (
+				6C890AE62CB3A6AB003DD357 /* Sources */,
+				6C890AE72CB3A6AB003DD357 /* Frameworks */,
+				6C890AE82CB3A6AB003DD357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C890AF02CB3A6AB003DD357 /* GeofenceWidget */,
+			);
+			name = GeofenceWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = GeofenceWidgetExtension;
+			productReference = 6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +191,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					6C890AD42CB3A665003DD357 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					6C890AE92CB3A6AB003DD357 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +213,20 @@
 			projectRoot = "";
 			targets = (
 				6C890AD42CB3A665003DD357 /* TrackYou */,
+				6C890AE92CB3A6AB003DD357 /* GeofenceWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6C890AD32CB3A665003DD357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C890AE82CB3A6AB003DD357 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,10 +240,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C890B042CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C890AE62CB3A6AB003DD357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C890B032CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C890AFB2CB3A6AE003DD357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C890AE92CB3A6AB003DD357 /* GeofenceWidgetExtension */;
+			targetProxy = 6C890AFA2CB3A6AE003DD357 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6C890AE12CB3A667003DD357 /* Debug */ = {
@@ -249,12 +387,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrackYou/Preview Content\"";
-				DEVELOPMENT_TEAM = V5U53J8M62;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrackYou/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Necesitamos saber tu ubicacion";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos saber tu ubicacion";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -267,6 +412,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.TrackYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -278,12 +424,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrackYou/Preview Content\"";
-				DEVELOPMENT_TEAM = V5U53J8M62;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrackYou/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Necesitamos saber tu ubicacion";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos saber tu ubicacion";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,6 +449,63 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.TrackYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6C890AFF2CB3A6AE003DD357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeofenceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GeofenceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.TrackYou.GeofenceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6C890B002CB3A6AE003DD357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeofenceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GeofenceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.TrackYou.GeofenceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,6 +529,15 @@
 			buildConfigurations = (
 				6C890AE42CB3A667003DD357 /* Debug */,
 				6C890AE52CB3A667003DD357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C890AFE2CB3A6AE003DD357 /* Build configuration list for PBXNativeTarget "GeofenceWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C890AFF2CB3A6AE003DD357 /* Debug */,
+				6C890B002CB3A6AE003DD357 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
