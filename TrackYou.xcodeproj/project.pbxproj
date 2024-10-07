@@ -10,8 +10,6 @@
 		6C890AED2CB3A6AB003DD357 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C890AEC2CB3A6AB003DD357 /* WidgetKit.framework */; };
 		6C890AEF2CB3A6AB003DD357 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C890AEE2CB3A6AB003DD357 /* SwiftUI.framework */; };
 		6C890AFC2CB3A6AE003DD357 /* GeofenceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6C890B032CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */; };
-		6C890B042CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +41,6 @@
 		6C890AEA2CB3A6AB003DD357 /* GeofenceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GeofenceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C890AEC2CB3A6AB003DD357 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		6C890AEE2CB3A6AB003DD357 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceActivityAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -61,6 +58,14 @@
 			);
 			target = 6C890AD42CB3A665003DD357 /* TrackYou */;
 		};
+		6C890B0A2CB3A99C003DD357 /* Exceptions for "TrackYou" folder in "GeofenceWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GeofenceActivityAttributes.swift,
+				LocationManager.swift,
+			);
+			target = 6C890AE92CB3A6AB003DD357 /* GeofenceWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -68,6 +73,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				6C890B062CB3A8FB003DD357 /* Exceptions for "TrackYou" folder in "TrackYou" target */,
+				6C890B0A2CB3A99C003DD357 /* Exceptions for "TrackYou" folder in "GeofenceWidgetExtension" target */,
 			);
 			path = TrackYou;
 			sourceTree = "<group>";
@@ -105,7 +111,6 @@
 		6C890ACC2CB3A665003DD357 = {
 			isa = PBXGroup;
 			children = (
-				6C890B022CB3A885003DD357 /* GeofenceActivityAttributes.swift */,
 				6C890AD72CB3A665003DD357 /* TrackYou */,
 				6C890AF02CB3A6AB003DD357 /* GeofenceWidget */,
 				6C890AEB2CB3A6AB003DD357 /* Frameworks */,
@@ -240,7 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C890B042CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C890B032CB3A885003DD357 /* GeofenceActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

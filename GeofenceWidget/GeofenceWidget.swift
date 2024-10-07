@@ -7,78 +7,46 @@
 
 import WidgetKit
 import SwiftUI
+import ActivityKit
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
+@main
+struct GeofenceWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: GeofenceActivityAttributes.self) { context in
+            GeofenceActivityView(context: context)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.center) {
+                    GeofenceActivityView(context: context)
+                }
+            } compactLeading: {
+                Text("GEO")
+            } compactTrailing: {
+                Text(context.state.isInGeofence ? "In" : "Out")
+            } minimal: {
+                Text(context.state.isInGeofence ? "In" : "Out")
+            }
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
-
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
-
-struct GeofenceWidgetEntryView : View {
-    var entry: Provider.Entry
+struct GeofenceActivityView: View {
+    let context: ActivityViewContext<GeofenceActivityAttributes>
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
-        }
-    }
-}
-
-struct GeofenceWidget: Widget {
-    let kind: String = "GeofenceWidget"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                GeofenceWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+            if context.state.isInGeofence {
+                Text("Dentro de la geocerca")
+                    .font(.headline)
+                    .foregroundColor(.green)
             } else {
-                GeofenceWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
+                Text("Fuera de la geocerca")
+                    .font(.headline)
+                    .foregroundColor(.red)
             }
+            Text("Ubicación: \(context.state.userLocation)")
+                .font(.subheadline)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
     }
 }
 
-#Preview(as: .systemSmall) {
-    GeofenceWidget()
-} timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
-}
